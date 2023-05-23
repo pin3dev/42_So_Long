@@ -1,13 +1,10 @@
-#include <mlx.h>
+#include "mlx.h"
 
-int	main(void)
+int main()
 {
-	void	*mlx;
-	void	*mlx_win;
-
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	mlx_loop(mlx_win);
+    void *mlx = mlx_init();
+    void *win = mlx_new_window(mlx, 640, 360, "Tutorial Window");
+    mlx_loop(win);
+    mlx_loop(mlx);
 }
 
-// para compilar no terminal sem makefile: cc -Wall -Wextra -Werror -I/usr/include -Imlx_linux so_long.c -o so_long
