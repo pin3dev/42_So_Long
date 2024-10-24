@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:39:50 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/30 13:39:58 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:32:42 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../libft/libft.h"
-# include "../includes/get_next_line.h"
-# include "../minilibx-linux/mlx.h"
-# include "../minilibx-linux/mlx_int.h"
+# include "libft.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
+#include "mlx.h"
+#include "mlx_int.h"
+
+#include <fcntl.h>
+#include "keys.h"
 
 typedef struct s_data
 {

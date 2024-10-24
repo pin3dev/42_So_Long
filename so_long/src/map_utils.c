@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   readmap_utils.c                                    :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:01:27 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 13:01:31 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 00:15:54 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
+#include "so_long.h"
 void	windowsize(t_data *gameinfo)
 {
 	int	i;

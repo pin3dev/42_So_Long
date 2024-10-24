@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_validation.c                                 :+:      :+:    :+:   */
+/*   moves_valid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:01:06 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 13:01:09 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 00:15:54 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
+#include "so_long.h"
 int	moves_w(t_data *gameinfo, int x, int y)
 {
 	if (gameinfo->map[y - 1][x] == 'C')

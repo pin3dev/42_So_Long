@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flood_fill_extra.c                                 :+:      :+:    :+:   */
+/*   find_duped.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:54:45 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 12:54:48 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 00:14:00 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 void	find_position_duped(t_data *gameinfo)
 {

@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_extra.c                                      :+:      :+:    :+:   */
+/*   moves_cont.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:00:50 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 13:00:54 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 00:15:54 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
+#include "so_long.h"
 void	swap_top(t_data *gameinfo, int y, int x, char type)
 {
 	char	swap;

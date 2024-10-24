@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:00:37 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 13:00:40 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:35:42 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
+#include "so_long.h"
 void	move_w(t_data *gameinfo)
 {
 	find_position(gameinfo);
@@ -82,12 +81,12 @@ void	move_d(t_data *gameinfo)
 
 void	moves(int key, t_data *gameinfo)
 {
-	if (key == XK_Up)
+	if (key == KEY_UP)
 		move_w(gameinfo);
-	else if (key == XK_Down)
+	else if (key == KEY_DOWN)
 		move_s(gameinfo);
-	else if (key == XK_Left)
+	else if (key == KEY_LEFT)
 		move_a(gameinfo);
-	else if (key == XK_Right)
+	else if (key == KEY_RIGHT)
 		move_d(gameinfo);
 }

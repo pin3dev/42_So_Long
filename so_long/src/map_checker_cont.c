@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map_extra.c                                  :+:      :+:    :+:   */
+/*   map_checker_cont.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:51:53 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 12:51:58 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 00:15:54 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
+#include "so_long.h"
 void	check_empty(t_data *gameinfo)
 {
 	int	x;

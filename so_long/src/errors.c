@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivbatist <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:52:17 by ivbatist          #+#    #+#             */
-/*   Updated: 2023/05/26 12:52:24 by ivbatist         ###   ########.fr       */
+/*   Updated: 2024/10/24 00:43:18 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 int	exit_clean(t_data *gameinfo)
 {
@@ -20,7 +20,10 @@ int	exit_clean(t_data *gameinfo)
 	mlx_destroy_image(gameinfo->mlx, gameinfo->img_player);
 	mlx_destroy_image(gameinfo->mlx, gameinfo->img_wall);
 	mlx_destroy_window(gameinfo->mlx, gameinfo->mlx_window);
-	mlx_destroy_display(gameinfo->mlx);
+	
+	#ifdef __linux__
+		mlx_destroy_display(gameinfo->mlx);
+	#endif
 	free(gameinfo->mlx);
 	clearmap(gameinfo);
 	exit(0);
