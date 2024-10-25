@@ -6,9 +6,20 @@
 #    By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 13:03:08 by ivbatist          #+#    #+#              #
-#    Updated: 2024/10/24 16:33:48 by pin3dev          ###   ########.fr        #
+#    Updated: 2024/10/25 01:11:01 by pin3dev          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+RED=\033[0;31m
+GREEN=\033[0;32m
+RESET=\033[0m
+BKGRAY=\033[47;90m
+BKGRAYGREEN=\033[1;92m
+BKGRAYRED=\033[1;91m
+
+################################################################################
+# 									Executable	 	 						   #
+################################################################################
 
 NAME = so_long
 
@@ -60,7 +71,6 @@ GNL_REPO = git@github.com:pin3dev/42_GetNextLine.git
 #MINILIBX = $(MINILIBX_DIR)/libmlx_Linux.a
 #MINILIBX_REPO = git@github.com:42Paris/minilibx-linux.git
 
-
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
@@ -106,23 +116,14 @@ all: $(OBJDIR) $(LIBFT) $(PRINTF) $(GNL) $(MINILIBX) $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
-#	@$(MAKE) -C $(GNL_DIR) clean
-#	@$(MAKE) -C $(PRINTF_DIR) clean
-#	@$(MAKE) -C $(MINILIBX_DIR) clean
-	@echo "Arquivos objetos removidos"
+	@if [ -d "$(OBJDIR)" ]; then $(RMD) $(OBJDIR); fi
+	@echo "${BKGRAY}So_Long:${BKGRAYRED}- Obj${RESET}"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RMD) $(OBJDIR)
-# @$(MAKE) -C $(MINILIBX_DIR) fclean
-#	@$(RMD) ../../42_Libft
-#	@$(RMD) ../../42_GetNextLine
-#	@$(RMD) ../../42_ft_Printf
-#	@$(RMD) ../../minilibx-linux
-	@echo "$(NAME) e dependências removidos"
+	@echo "${BKGRAY}So_Long: ${BKGRAYRED}- Exec${RESET}"
 
 re: fclean all
-
 
 ################################################################################
 # 							Dependencies Targets							   #
@@ -130,52 +131,49 @@ re: fclean all
 
 $(LIBFT):
 	@if [ ! -d $(LIBFT_DIR) ]; then \
-		echo "Clonando Libft..."; \
-		git clone $(LIBFT_REPO) ../../42_Libft; \
+		git clone $(LIBFT_REPO) ../../42_Libft > /dev/null 2>&1; \
 	fi
-	@$(MAKE) -C $(LIBFT_DIR)
+	@printf "${BKGRAY}Libft:${RESET} "; 
+	@$(MAKE) -C $(LIBFT_DIR) all
 
 $(PRINTF):
 	@if [ ! -d $(PRINTF_DIR) ]; then \
-		echo "Clonando ft_Printf..."; \
-		git clone $(PRINTF_REPO) ../../42_ft_Printf; \
+		git clone $(PRINTF_REPO) ../../42_ft_Printf > /dev/null 2>&1; \
 	fi
-	@$(MAKE) -C $(PRINTF_DIR)
-
-$(MINILIBX):
-	@if [ ! -d $(MINILIBX_DIR) ]; then \
-		echo "Clonando MiniLibX..."; \
-		git clone $(MINILIBX_REPO) $(MINILIBX_DIR); \
-	fi
-	@$(MAKE) -C $(MINILIBX_DIR)
+	@printf "${BKGRAY}Printf:${RESET} "; 
+	@$(MAKE) -C $(PRINTF_DIR) all
 
 $(GNL):
 	@if [ ! -d $(GNL_DIR) ]; then \
-		echo "Clonando GetNextLine..."; \
-		git clone $(GNL_REPO) ../../42_GetNextLine; \
+		git clone $(GNL_REPO) ../../42_GetNextLine > /dev/null 2>&1; \
 	fi
-	@$(MAKE) -C $(GNL_DIR)
+	@printf "${BKGRAY}GNL:${RESET} "; 
+	@$(MAKE) -C $(GNL_DIR) all
 
+$(MINILIBX):
+	@if [ ! -d $(MINILIBX_DIR) ]; then \
+		git clone $(MINILIBX_REPO) $(MINILIBX_DIR) > /dev/null 2>&1; \
+	fi
+	@printf "${BKGRAY}MLX:${RESET} "; 
+	@$(MAKE) -C $(MINILIBX_DIR)
+	
 ################################################################################
 # 						Auto Targets 				 						   #
 ################################################################################
-
-
-$(NAME): $(OBJS) $(LIBFT) $(PRINTF) $(MINILIBX) $(GNL)
-	$(CC) $(CFLAGS) $(OBJS) $(MINILIBX) $(MLX_FLAGS) $(MLX_EXTRA) $(LIBFT) $(PRINTF)  $(GNL) -o $(NAME)
-	@echo "$(NAME) compilado com sucesso!"
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-	@echo "Compilado $< em $@"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS) $(LIBFT) $(PRINTF) $(MINILIBX) $(GNL)
+	@$(CC) $(CFLAGS) $(OBJS) $(MINILIBX) $(MLX_FLAGS) $(MLX_EXTRA) $(LIBFT) $(PRINTF)  $(GNL) -o $(NAME) & \
+	./gui_load.sh "So_Long"
+	@wait
 
 ################################################################################
 # 										PS		 	 						   #
 ################################################################################
 
 .PHONY: all clean fclean re
-
-#$(CC) $(CFLAGS) $(OBJS) $(MINILIBX) -lXext -lX11 $(LIBFT) $(GNL) -o $(NAME)
