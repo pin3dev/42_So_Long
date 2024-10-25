@@ -6,7 +6,7 @@
 #    By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 13:03:08 by ivbatist          #+#    #+#              #
-#    Updated: 2024/10/25 01:11:01 by pin3dev          ###   ########.fr        #
+#    Updated: 2024/10/25 01:18:21 by pin3dev          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ ifeq ($(UNAME), Linux)
 else ifeq ($(UNAME), Darwin)
 	MINILIBX_DIR = ../../minilibx-macos
 	MINILIBX = $(MINILIBX_DIR)/libmlx_OpenBSD.a
-	MINILIBX_REPO = git@github.com:dannywillems/minilibx-mac-osx.git
+	MINILIBX_REPO = git@github.com:pin3dev/42_minilibx-macos.git
 	MLX_FLAGS = -L$(MINILIBX_DIR) -lmlx_intel-mac -L/usr/X11/lib -lXext -lX11 -framework OpenGL -framework AppKit
 	CFLAGS += -I/opt/X11/include -I$(MINILIBX_DIR)
 endif
