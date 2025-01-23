@@ -112,7 +112,7 @@ OBJS = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 # 							Manual	Targets		 							   #
 ################################################################################
 
-all: $(OBJDIR) $(LIBFT) $(PRINTF) $(GNL) $(MINILIBX) $(NAME)
+all: $(LIBFT) $(PRINTF) $(GNL) $(MINILIBX) $(OBJDIR) $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
