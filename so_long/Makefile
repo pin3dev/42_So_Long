@@ -6,7 +6,7 @@
 #    By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 13:03:08 by ivbatist          #+#    #+#              #
-#    Updated: 2024/10/25 01:18:21 by pin3dev          ###   ########.fr        #
+#    Updated: 2025/08/07 14:53:16 by pin3dev          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,7 +155,11 @@ $(MINILIBX):
 		git clone $(MINILIBX_REPO) $(MINILIBX_DIR) > /dev/null 2>&1; \
 	fi
 	@printf "${BKGRAY}MLX:${RESET} "; 
-	@$(MAKE) -C $(MINILIBX_DIR)
+	@cd $(MINILIBX_DIR) && \
+	if ! $(MAKE) > /dev/null 2>&1; then \
+		echo "\n${BKGRAY}MLX:${BKGRAYRED}continuing...${RESET}"; \
+		sleep 5; \
+	fi
 	
 ################################################################################
 # 						Auto Targets 				 						   #
