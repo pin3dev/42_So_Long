@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="" width="600" height="375" />
+  <img src="https://github.com/pin3dev/42_Cursus/blob/main/assets/So_Long/Rdm/solong_demo.gif" width="600" height="375" />
 </p>
 
 <h3>
