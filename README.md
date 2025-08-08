@@ -24,7 +24,7 @@
     <a href="#cloning">Cloning</a> •
     <a href="#usage">Usage</a> •
     <a href="#norms">Norms</a> •
-    <a href="#tutorial">Tutorial</a> •
+    <!--<a href="#tutorial">Tutorial</a> •-->
     <a href="#contributors">Contributors</a>
   </p>
 </h3>
@@ -114,7 +114,7 @@ Legend:
 
 This project adheres strictly to the [**42 Norm**](https://github.com/pin3dev/42_Cursus/blob/main/norme.en.pdf) coding guidelines. These guidelines enforce specific coding styles and practices, shaping the implementation of the project accordingly.
 
-## 🔬 Tutorial <a id="tutorial"></a>
+<!--## 🔬 Tutorial <a id="tutorial"></a>
 
 A step-by-step tutorial on completing the **so_long** project is available here:
 
@@ -122,7 +122,7 @@ A step-by-step tutorial on completing the **so_long** project is available here:
   <a href="https://github.com/pin3dev">
     <img src="https://img.shields.io/badge/so_long_Tutorial-lightgreen?style=for-the-badge"/>
   </a>
-</p>
+</p> -->
 
 ## 👥 Contributors <a id="contributors"></a>
 
